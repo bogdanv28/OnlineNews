@@ -105,8 +105,14 @@ public class HomeController {
 	public String getArticle(@PathVariable int id, Model model) {
 		
         Optional<Article> aArticle = articleRepo.findById(id);
+        
+        if (!aArticle.isPresent()) {
+			return "redirect:/";
+		}
+        
+        Article a1= aArticle.get();
 		
-		model.addAttribute("aArticle", aArticle);
+		model.addAttribute("aArticle", a1);
 		
 		return "fragments/news-template.html";
 	}

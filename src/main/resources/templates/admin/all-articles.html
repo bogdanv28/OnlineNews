@@ -23,14 +23,16 @@
 				<th scope="col">Title</th>
 				<th scope="col"></th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 			</thead>
 			<tbody>
 				<tr id="general" th:each="aArticle : ${allArticles}">				
 					<td ><img th:src="@{'/media/' + ${aArticle.image}}" style="width:100px; height:50px;"></td>
 					<td th:utext="${aArticle.title}" />
+					<td><a th:href="@{'/admin/articles/read/' + ${aArticle.id}}">Read article</a></td>
 					<td><a th:href="@{'/admin/articles/edit/' + ${aArticle.id}}">Edit article</a></td>
-					<td><a th:href="@{'/admin/articles/delete/' + ${aArticle.id}}">Delete article</a></td>
+					<td><a th:href="@{'/admin/articles/delete/' + ${aArticle.id}}"  onclick="return confirm('Are you sure?') ? true : false;">Delete article</a></td>
 					
 				</tr>
 			</tbody>

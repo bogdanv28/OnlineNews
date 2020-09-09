@@ -69,6 +69,22 @@ public class ArticleController {
 		return "redirect:/admin/all-articles";
 	}
 	
+	@GetMapping("/read/{id}")
+	public String getArticle(@PathVariable int id, Model model) {
+		
+        Optional<Article> aArticle = articleRepo.findById(id);
+        
+        Article a1= aArticle.get();
+        
+        if (!aArticle.isPresent()) {
+     			return "redirect:/";
+     		}
+		
+		model.addAttribute("aArticle", a1);
+		
+		return "admin/news-template.html";
+	}
+	
 	@GetMapping("/edit/{id}")
 	public String editForm(@PathVariable int id, Model model) {
 		
@@ -86,6 +102,6 @@ public class ArticleController {
 		
 		return "redirect:/admin/all-articles";
 	}
-
+	
 	
 }
