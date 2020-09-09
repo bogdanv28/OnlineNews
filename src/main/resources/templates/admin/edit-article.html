@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
+</head>
+<body>
+<nav th:replace="/fragments/admin-navbar"></nav>
+
+<div class="container">
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+<h3>Edit article</h3>
+<form method="POST" action="/admin/articles/save" th:object="${article}" enctype="multipart/form-data" >
+
+
+<input class="form-control" type="text" th:field="${article.id}" hidden >
+ <br> 
+
+<label>Title:</label>
+<input class="form-control" type="text" th:field="${article.title}" required>
+ <br> 
+
+<label for="exampleFormControlSelect1">Write content:</label>
+<textarea th:field="${article.content}"  style="font-size:16px !important; font-family:verdana !important"></textarea>
+<br>
+
+<label>Choose image (jpg or png):</label>
+<div class="form-group">
+	<input type="file" class="form=control" th:name="file" required>
+</div>
+<br>
+
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Select Category:</label>
+    <select class="form-control" id="exampleFormControlSelect1" th:field="${article.category}">
+      <option th:value="general" ></option>
+      <option th:value="general">General</option>
+      <option th:value="politics">Politics</option>
+      <option th:value="finance">Finance</option>
+      <option th:value="sports">Sports</option>
+    </select>
+</div>
+
+	
+    <input type="submit" style="font-size:16px !important; font-family:verdana !important">
+</form>  
+</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

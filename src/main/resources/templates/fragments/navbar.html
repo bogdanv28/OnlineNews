@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
+ <div class="container">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  	<a href="/" class="navbar-brand">
+  	<img th:src="@{logo/logo_news.jpg}">
+  	</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/categories/all-general-news">General</a>
+          <a class="dropdown-item" href="/categories/all-politics-news">Politics</a>
+          <a class="dropdown-item" href="/categories/all-finance-news">Finance</a>
+          <a class="dropdown-item" href="/categories/all-sports-news">Sports</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Our Mission</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>

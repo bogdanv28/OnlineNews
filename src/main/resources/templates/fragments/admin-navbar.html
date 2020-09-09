@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="admin-navbar">
+ <div class="container">
+  <a class="navbar-brand" href="/">{Logo here}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/categories/all-general-news">General</a>
+          <a class="dropdown-item" href="/categories/all-politics-news">Politics</a>
+          <a class="dropdown-item" href="/categories/all-finance-news">Finance</a>
+          <a class="dropdown-item" href="/categories/all-finance-news">Sports</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Our Mission</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/articles/new">Add new article</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="/admin/all-articles">All articles(Edit/Delete)</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>

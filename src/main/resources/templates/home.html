@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+    <style>
+    .flex-container {
+  display: flex;
+}
+    .flex-container > div {
+  padding: 20px;
+}
+body {
+  font-family:verdana;
+}
+p {
+    color: black !important;
+    font-size:15px !important;
+    font-family:verdana !important;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+
+#main img {
+    width: 360px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.entry2 img {
+  margin-bottom: 30px; }
+
+.entry2 h3 {
+  font-size: 19px;
+  margin-bottom: 30px;
+  font-weight: 700; }
+  .entry2 h2 a {
+    color: #000; }
+
+.entry2 .excerpt {
+  padding-left: 20px;
+  padding-right: 20px; }
+    
+  </style>
+</head>
+
+<body>
+<nav th:replace="/fragments/navbar"></nav>
+
+<div class="container" id="main">
+<br>
+	
+	<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h2 style="font-size:160%; color:#5eaaa8">General news</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" th:each="aArticle : ${articlesListGeneral}">
+            <div class="entry2">
+              <a th:href="@{'/' + ${aArticle.id}}"><img th:src="@{'/media/' + ${aArticle.image}}" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <h3 th:utext="${aArticle.title}"><a href="#"></a></h3>
+              <div class="post-meta align-items-center text-left clearfix">
+              </div>
+              
+                <p th:utext="${aArticle.content}"></p>
+                <p><a th:href="@{'/' + ${aArticle.id}}">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+	
+	
+	<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h2 style="font-size:160%; color:#5eaaa8">Politics</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4"  th:each="aArticle : ${articlesListPolitics}">
+            <div class="entry2">
+              <a href="#"><img th:src="@{'/media/' + ${aArticle.image}}" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <h3 th:utext="${aArticle.title}"><a href="#"></a></h3>
+              <div class="post-meta align-items-center text-left clearfix">
+              </div>
+              
+                <p th:utext="${aArticle.content}"></p>
+                <p><a href="#">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+   <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h2 style="font-size:160%; color:#5eaaa8">Finance</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" th:each="aArticle : ${articlesListFinance}">
+            <div class="entry2">
+              <a href="#"><img th:src="@{'/media/' + ${aArticle.image}}" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <h3 th:utext="${aArticle.title}"><a href="#"></a></h3>
+              <div class="post-meta align-items-center text-left clearfix">
+              </div>
+              
+                <p th:utext="${aArticle.content}"></p>
+                <p><a href="#">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <h2 style="font-size:160%; color:#5eaaa8">Sports</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" th:each="aArticle : ${articlesListSports}">
+            <div class="entry2">
+              <a href="#"><img th:src="@{'/media/' + ${aArticle.image}}" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <h3 th:utext="${aArticle.title}"><a href="#"></a></h3>
+              <div class="post-meta align-items-center text-left clearfix">
+              </div>
+              
+                <p th:utext="${aArticle.content}"></p>
+                <p><a th:href="@{'/' + ${aArticle.id}}">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+   <br>
+   
+  	
+<footer th:replace="/fragments/footer"></footer>
+</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
