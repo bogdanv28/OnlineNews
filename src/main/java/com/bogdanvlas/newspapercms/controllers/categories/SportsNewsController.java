@@ -28,9 +28,9 @@ public class SportsNewsController {
 		for (Article a :  articles) {
 			if (a.getCategory().equals("sports")) {
 				if (a.getContent().length() < 350) {
-					sports.add(new Article(a.getTitle(), a.getContent()));
+					sports.add(new Article(a.getTitle(), a.getContent(), a.getImage()));
 				} else {
-					sports.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "..."));
+				sports.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "...", a.getImage()));
 			}
 		 }
 		}

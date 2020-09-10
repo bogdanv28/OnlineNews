@@ -116,5 +116,17 @@ public class HomeController {
 		
 		return "fragments/news-template.html";
 	}
+	
+	@GetMapping("/our-mision")
+	public String ourMision() {
+		
+		return "our-mision";
+	}
+	
+	@GetMapping("/contact")
+	public String contact() {
+		
+		return "contact";
+	}
 
 }

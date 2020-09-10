@@ -28,9 +28,9 @@ public class FinanceNewsController {
 		for (Article a :  articles) {
 			if (a.getCategory().equals("finance")) {
 				if (a.getContent().length() < 350) {
-					finance.add(new Article(a.getTitle(), a.getContent()));
+					finance.add(new Article(a.getTitle(), a.getContent(), a.getImage()));
 				} else {
-					finance.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "..."));
+				finance.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "...", a.getImage()));
 			}
 			}
 		}

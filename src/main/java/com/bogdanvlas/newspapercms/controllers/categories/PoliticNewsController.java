@@ -28,9 +28,9 @@ public class PoliticNewsController {
 		for (Article a :  articles) {
 			if (a.getCategory().equals("politics")) {
 				if (a.getContent().length() < 350) {
-					politics.add(new Article(a.getTitle(), a.getContent()));
+					politics.add(new Article(a.getTitle(), a.getContent(), a.getImage()));
 				} else {
-					politics.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "..."));	
+					politics.add(new Article(a.getTitle(), a.getContent().substring(0,350) + "...", a.getImage()));
 				}
 			}
 		}

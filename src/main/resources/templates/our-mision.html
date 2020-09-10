@@ -3,32 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-   
 </head>
 
 <body>
 <nav th:replace="/fragments/navbar"></nav>
 
 <div class="container">
-
-<table class="table borderless">
-			<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-			</thead>
-			<tbody>
-				<tr id="general" th:each="aArticle : ${articlesListPolitics}">				
-					<td ><img th:src="@{'/media/' + ${aArticle.image}}" style="width:250px; height:140px;"></td>
-					<td th:utext="${aArticle.title}" />
-				</tr>
-			</tbody>
-		</table>
-
-	<footer th:replace="/fragments/footer"></footer>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mauris vitae nisl tincidunt vulputate eu gravida dolor. 
+Praesent mauris mi, dapibus vel posuere vitae, rutrum sit amet orci. Donec rutrum risus ut lobortis consequat. 
+Pellentesque est massa, faucibus et risus vitae, imperdiet pulvinar leo. Aliquam nibh nibh, efficitur id vehicula et, lobortis sed risus. 
+Ut laoreet iaculis magna. Nam tellus tortor, gravida eget ante nec, convallis ullamcorper leo. Mauris sit amet augue et magna blandit venenatis 
+eu a erat. Morbi at luctus tortor. Nulla imperdiet placerat lectus, porta lobortis est posuere sed. Sed id facilisis mauris, nec semper erat.
+</p>
+  	
+<footer th:replace="/fragments/footer"></footer>
 </div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
